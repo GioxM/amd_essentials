@@ -1,0 +1,8 @@
+Start: 2025-11-09T11:32:41.536659
+End: 2025-11-09T11:32:45.516503
+Command: ffmpeg -i /Users/canince/Documents/New_Project/250617_1117_0002/clips/clip_2_mwave_25g_25b_100b_2L_L2_527.homohs -c:v libx264 -preset slow -crf 17 -profile:v high -level 5.2 -pix_fmt yuv420p -bf 2 -g 25 -coder 1 -movflags +faststart -an -y /Users/canince/Documents/Code/video_converter/converted_videos/09Nov2025/11h32m41s/clip_2_mwave_25g_25b_100b_2L_L2_527/clip_2_mwave_25g_25b_100b_2L_L2_527.mp4
+
+
+Input MD5:  63f9226af8dbcaf1850e60810c9e02ea
+Output MD5: 60d04fb5352cd4b9d1a957132f6d260f
+Size: 3 MB

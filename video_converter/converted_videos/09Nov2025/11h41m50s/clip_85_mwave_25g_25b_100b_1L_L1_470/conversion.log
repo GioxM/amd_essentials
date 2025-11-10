@@ -1,0 +1,8 @@
+Start: 2025-11-09T11:41:50.233238
+End: 2025-11-09T11:41:51.602155
+Command: ffmpeg -i /Users/canince/Documents/OxyCam_Projects/250317_1017_0002/clips/clip_85_mwave_25g_25b_100b_1L_L1_470.hmexhs -c:v libx264 -preset slow -crf 17 -profile:v high -pix_fmt yuv420p -bf 2 -g 25 -coder 1 -c:a -an -movflags +faststart -y /Users/canince/Documents/Code/video_converter/converted_videos/09Nov2025/11h41m50s/clip_85_mwave_25g_25b_100b_1L_L1_470/clip_85_mwave_25g_25b_100b_1L_L1_470.mp4
+
+
+Input MD5:  2c687ac1adcd2624e2a65e2ebed56a47
+Output MD5: 11b01857e108245b4eea62b4cf09bc48
+Size: 0 MB

@@ -1,0 +1,222 @@
+OXYGEN EXTRACTION REPORT – Generated on 2025-11-06 15:01
+
+================================================================================
+
+
+This dataset contains measurements from 5 animal(s) with a total of 12,271 blood vessels.
+
+
+VESSEL CLASSIFICATION
+
+Vessels are classified into types based on imaging. Type 0 = Capillaries, Type 1 = Venules (or larger vessels).
+
+• 11,688 capillaries (Type 0) – 95.25% of total
+
+• 583 venules (Type 1) –  4.75% of total
+
+
+
+EXPERIMENTAL SESSIONS
+
+Each 'vid_name' represents a recording session (camera + condition).
+
+• Session 'oxycam5T260-00': 420 vessels recorded
+
+• Session 'oxycam1_T421-00': 392 vessels recorded
+
+• Session 'oxycam2_T5_fio2-21-00': 389 vessels recorded
+
+• Session 'oxycam1_T7_0_2-00': 385 vessels recorded
+
+• Session 'oxycam5T421-00': 383 vessels recorded
+
+• Session 'oxycam1_T340-00': 382 vessels recorded
+
+• Session 'oxycam2-T1_fio2-100-00': 381 vessels recorded
+
+• Session 'oxycam6T70-00': 371 vessels recorded
+
+• Session 'oxycam5T1100-00': 369 vessels recorded
+
+• Session 'oxycam1_T260-00': 352 vessels recorded
+
+• Session 'oxycam5T340-00': 352 vessels recorded
+
+• Session 'oxycam5T70-00': 350 vessels recorded
+
+• Session 'oxycam1_T6-00': 349 vessels recorded
+
+• Session 'oxycam5T521-00': 344 vessels recorded
+
+• Session 'oxycam1_BL40-00': 343 vessels recorded
+
+• Session 'oxycam1_T5-00': 337 vessels recorded
+
+• Session 'oxycam5T040-00': 335 vessels recorded
+
+• Session 'oxycam2_T3_fio2-40-00': 333 vessels recorded
+
+• Session 'oxycam6T421-00': 331 vessels recorded
+
+• Session 'oxycam1_T1100-00': 327 vessels recorded
+
+• Session 'oxycam2-T0_fio2-40-00': 323 vessels recorded
+
+• Session 'oxycam2_T6_fio2-21-00': 323 vessels recorded
+
+• Session 'oxycam6T260-00': 322 vessels recorded
+
+• Session 'oxycam4_T5-fio2-21': 315 vessels recorded
+
+• Session 'oxycam2_T4_fio2-21-00': 312 vessels recorded
+
+• Session 'oxycam4_T4_fio2-21-00': 297 vessels recorded
+
+• Session 'oxycam6T621-00': 290 vessels recorded
+
+• Session 'oxycam4_T6-fio2-21': 280 vessels recorded
+
+• Session 'oxycam6T1100-00': 279 vessels recorded
+
+• Session 'oxycam6T521-00': 277 vessels recorded
+
+• Session 'oxycam2_T7_fio2-0-00': 274 vessels recorded
+
+• Session 'oxycam2_T2_fio2-60-00': 271 vessels recorded
+
+• Session 'oxycam4_T7-fio2-0': 265 vessels recorded
+
+• Session 'oxycam4_T2_fio2-60-00': 261 vessels recorded
+
+• Session 'oxycam5T621-00': 255 vessels recorded
+
+• Session 'oxycam4_T3_fio2-40-2-00': 246 vessels recorded
+
+• Session 'oxycam6T040-00': 235 vessels recorded
+
+• Session 'oxycam6T340-00': 214 vessels recorded
+
+• Session 'oxycam5T421-01': 7 vessels recorded
+
+
+
+OXYGEN EXTRACTION ANALYSIS
+
+Oxygen extraction = SO₂ at vessel entrance minus SO₂ at exit.
+
+Positive value → tissue consumed oxygen (expected).
+
+Negative value → possible sensor error or reversal.
+
+
+1,576 vessels (12.84%) have both entrance and exit SO₂.
+
+Average oxygen extraction: +0.0041 (median +0.0000, std 0.3294)
+
+278 vessels (17.64%) show oxygen increase (violations).
+
+
+Example violations (first 3):
+
+  Animal 1, oxycam1_BL40-00, vessel 81: start 0.000 → end 0.144
+
+  Animal 1, oxycam1_BL40-00, vessel 4: start 0.986 → end 1.000
+
+  Animal 1, oxycam1_BL40-00, vessel 17: start 0.000 → end 0.402
+
+
+
+Per-session oxygen extraction:
+
+  • oxycam1_BL40-00: average ΔSO₂ = +0.0867 (n=36)
+
+  • oxycam1_T1100-00: average ΔSO₂ = +0.0094 (n=44)
+
+  • oxycam1_T260-00: average ΔSO₂ = +0.0617 (n=35)
+
+  • oxycam1_T340-00: average ΔSO₂ = -0.0623 (n=31)
+
+  • oxycam1_T421-00: average ΔSO₂ = -0.1020 (n=32)
+
+  • oxycam1_T5-00: average ΔSO₂ = -0.0023 (n=19)
+
+  • oxycam1_T6-00: average ΔSO₂ = +0.0281 (n=22)
+
+  • oxycam1_T7_0_2-00: average ΔSO₂ = +0.1201 (n=20)
+
+  • oxycam2-T0_fio2-40-00: average ΔSO₂ = -0.0343 (n=63)
+
+  • oxycam2-T1_fio2-100-00: average ΔSO₂ = -0.0455 (n=77)
+
+  • oxycam2_T2_fio2-60-00: average ΔSO₂ = +0.0359 (n=48)
+
+  • oxycam2_T3_fio2-40-00: average ΔSO₂ = -0.0805 (n=44)
+
+  • oxycam2_T4_fio2-21-00: average ΔSO₂ = +0.0121 (n=59)
+
+  • oxycam2_T5_fio2-21-00: average ΔSO₂ = +0.0361 (n=55)
+
+  • oxycam2_T6_fio2-21-00: average ΔSO₂ = +0.0190 (n=33)
+
+  • oxycam2_T7_fio2-0-00: average ΔSO₂ = -0.0027 (n=63)
+
+  • oxycam4_T2_fio2-60-00: average ΔSO₂ = +0.0485 (n=42)
+
+  • oxycam4_T3_fio2-40-2-00: average ΔSO₂ = +0.0020 (n=11)
+
+  • oxycam4_T4_fio2-21-00: average ΔSO₂ = -0.0032 (n=32)
+
+  • oxycam4_T5-fio2-21: average ΔSO₂ = +0.1717 (n=18)
+
+  • oxycam4_T6-fio2-21: average ΔSO₂ = -0.0231 (n=32)
+
+  • oxycam4_T7-fio2-0: average ΔSO₂ = +0.0513 (n=28)
+
+  • oxycam5T040-00: average ΔSO₂ = -0.0317 (n=45)
+
+  • oxycam5T1100-00: average ΔSO₂ = +0.0039 (n=49)
+
+  • oxycam5T260-00: average ΔSO₂ = +0.0669 (n=48)
+
+  • oxycam5T340-00: average ΔSO₂ = +0.0609 (n=41)
+
+  • oxycam5T421-00: average ΔSO₂ = -0.0196 (n=51)
+
+  • oxycam5T521-00: average ΔSO₂ = +0.0416 (n=34)
+
+  • oxycam5T621-00: average ΔSO₂ = -0.1193 (n=38)
+
+  • oxycam5T70-00: average ΔSO₂ = -0.0199 (n=72)
+
+  • oxycam6T040-00: average ΔSO₂ = -0.0025 (n=32)
+
+  • oxycam6T1100-00: average ΔSO₂ = +0.0653 (n=34)
+
+  • oxycam6T260-00: average ΔSO₂ = -0.1131 (n=62)
+
+  • oxycam6T340-00: average ΔSO₂ = +0.0576 (n=17)
+
+  • oxycam6T421-00: average ΔSO₂ = +0.0330 (n=76)
+
+  • oxycam6T521-00: average ΔSO₂ = +0.0632 (n=29)
+
+  • oxycam6T621-00: average ΔSO₂ = +0.1039 (n=35)
+
+  • oxycam6T70-00: average ΔSO₂ = -0.0210 (n=69)
+
+
+
+PHYSICAL VESSEL SIZE
+
+Diameter estimated from volume and length assuming cylindrical shape.
+
+12,271 vessels used for diameter calculation.
+
+Average diameter: 9.73 µm (median 8.87 µm)
+
+CAPILLARIES (≤ 10 µm): 8,642 vessels (70.4%)
+
+
+================================================================================
+
+END OF REPORT

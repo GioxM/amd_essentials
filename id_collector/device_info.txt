@@ -1,0 +1,5 @@
+Label: Oxycam_V2.0_004
+Hardware ID: CY1WVM7DQH
+Label: Oxycam_V2.0_004
+Hardware ID: /dev/cu.debug-console
+
