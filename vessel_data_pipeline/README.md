@@ -1,4 +1,5 @@
 # **Vessel Data Pipeline** – README & User Guide  
+
 **Author:** G.M  
 **Date:** November 10, 2025  
 **Country:** NL  
@@ -43,6 +44,7 @@ vessel_data_pipeline/
 ## STEP 1: SETUP ENVIRONMENT
 
 ### 1.1 Install Conda (if not already)
+
 ```bash
 # Miniconda (recommended)
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -64,11 +66,13 @@ conda activate vessel_pipeline
 ## STEP 2: PREPARE YOUR DATA
 
 ### Option A: You have **Excel (.xlsx)**
+
 ```bash
 cp your_data.xlsx data/raw_data.xlsx
 ```
 
 ### Option B: You already have **JSON**
+
 ```bash
 cp your_data.json data/data.json
 ```
@@ -95,6 +99,7 @@ python scripts/generate_report.py data/data.json
 ```
 
 **Generates 4 files in `output/`**:
+
 | File | Description |
 |------|-------------|
 | `report.txt` | **Full narrative** (per-animal, sessions, violations, diameter, etc.) |
@@ -152,6 +157,7 @@ dependencies:
 ```
 
 Install with:
+
 ```bash
 conda env create -f environment.yml
 ```
@@ -169,7 +175,7 @@ conda env create -f environment.yml
 | `MemoryError` | Use smaller dataset or `sample(n=1000)` in code |
 | `Swarmplot failed` | Falls back to `stripplot` automatically |
 | `PDF blank` | Run with `--no-sandbox` in Jupyter or check Matplotlib backend |
-| `Conda not found` | Install Miniconda: https://docs.conda.io/en/latest/miniconda.html |
+| `Conda not found` | Install Miniconda: <https://docs.conda.io/en/latest/miniconda.html> |
 
 ---
 
@@ -194,6 +200,7 @@ xdg-open output/Oxygen_Extraction_PerAnimal.pdf
 ## OUTPUT EXPLAINED
 
 ### `report.txt`
+
 - Per-animal vessel counts
 - Capillary vs venule
 - Average ΔSO₂ per animal
@@ -203,15 +210,18 @@ xdg-open output/Oxygen_Extraction_PerAnimal.pdf
 - Capillary confirmation (≤10µm)
 
 ### `Oxygen_Extraction_Report.pdf`
+
 - **One page**: all animals combined
 - 6 small panels
 
 ### `Oxygen_Extraction_PerAnimal.pdf`
+
 - **One page per rat**
 - Full 6-panel layout
 - **Perfect for presentations**
 
 ### `Oxygen_Extraction_Detailed.pdf`
+
 - **One full page per plot**
 - OD, ΔSO₂, SO₂ scatter, diameter
 - **No point overlap** – uses swarm/jitter
@@ -253,3 +263,98 @@ DM @Artifioicus on X or open an issue.
 
 **Generated on:** November 10, 2025 at 10:17 AM CET  
 **Version:** v0.6 (stable)
+
+---
+
+## 🆕 NEW SCRIPT – `visualize_oxygen_redesigned_paired.py`
+
+A redesigned and extended visualization module that builds upon `visualize_oxygen_redesigned.py`.
+
+### **Description**
+
+Generates enhanced per-animal reports with:
+
+- **Panel 7** → *Paired SO₂ (In → Out)* for all vessels
+- **Automatic separation** of small (≤10 µm) and large (>10 µm) vessels
+- **Mean ± SEM** markers and **paired t-test** results
+- **Adaptive axis scaling** to avoid compressed data
+- **Standalone PDFs** for each group and style (Scientific & Modern)
+- **Connection table CSV** mapping vessel–correspondence pairs (`corresp`)
+
+### **Usage**
+
+```bash
+python scripts/visualize_oxygen_redesigned_paired.py data/data.json
+```
+
+**Generates:**
+
+```
+output_redesign/
+├── Vessel_Connections_Report.csv
+├── scientific/
+│   └── PerAnimal_scientific.pdf
+├── modern/
+│   └── PerAnimal_modern.pdf
+└── paired/
+    ├── scientific/
+    │   ├── Paired_SO2_Animal_<id>.pdf
+    │   ├── Paired_SO2_Small_Animal_<id>.pdf
+    │   └── Paired_SO2_Large_Animal_<id>.pdf
+    └── modern/
+        ├── Paired_SO2_Animal_<id>.pdf
+        ├── Paired_SO2_Small_Animal_<id>.pdf
+        └── Paired_SO2_Large_Animal_<id>.pdf
+```
+
+### **Key Features**
+
+| Feature             | Description                                                                   |
+| ------------------- | ----------------------------------------------------------------------------- |
+| Panel 7             | Adds Paired SO₂ (In→Out) with mean ± SEM and p-values                         |
+| Small / Large plots | Separate standalone PDFs for ≤10 µm and >10 µm vessels                        |
+| Adaptive scaling    | Prevents compressed data points automatically                                 |
+| Statistical output  | Paired t-test per group (displays *p*-value)                                  |
+| Connection report   | Exports `Vessel_Connections_Report.csv` mapping `vessel_nr` ↔ `corresp` pairs |
+
+---
+
+## 🆕 NEW OUTPUTS
+
+### **`Vessel_Connections_Report.csv`**
+
+A structured CSV summarizing all vessel links via the `corresp` column.
+
+| Animal | Vessel | Connected_To | SO2_start | SO2_end | Delta_SO2 |
+| ------ | ------ | ------------ | --------- | ------- | --------- |
+| 1      | 45     | 46           | 0.82      | 0.79    | +0.03     |
+| 1      | 46     | 47           | 0.79      | 0.77    | +0.02     |
+
+Saved automatically in:
+
+```
+output_redesign/Vessel_Connections_Report.csv
+```
+
+Use this to trace connectivity across the microvascular network.
+
+---
+
+## 🆕 UPDATED SCRIPT TABLE
+
+| Script                                  | What It Does                                                     | Key Features                                                                                                                         |
+| --------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `visualize_oxygen_redesigned_paired.py` | Extended redesign including Paired SO₂ panel + connection report | Adds Panel 7 (Paired SO₂ In→Out)<br>Generates per-animal, small-only, and large-only PDFs<br>Exports `Vessel_Connections_Report.csv` |
+
+---
+
+## 🆕 TIPS
+
+- **Use the “Paired” PDFs** for presentations comparing in/out oxygen extraction across vessel sizes.
+- **Check `Vessel_Connections_Report.csv`** to validate connectivity and trace flow direction.
+- Use the **Scientific style** for journals and the **Modern style** for slides.
+
+---
+
+**Version:** v0.7 (extended paired release)
+**Updated:** November 11 2025
